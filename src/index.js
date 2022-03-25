@@ -3,18 +3,38 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 // Redux Imports
 import { Provider } from 'react-redux';
+import Store from './Store';
 // Asset Imports
-import './index.css';
 import App from './App';
-import configureStore from './configureStore';
+// MUI Import
+import { StyledEngineProvider, ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+// WebVitals Import
 import reportWebVitals from './reportWebVitals';
 
-const store = configureStore()
+const theme = createTheme ({
+  palette: {
+    mode: 'dark',
+    primary: {
+      main: '#ff6800',
+    },
+    secondary: {
+      main: '#FFB27E',
+    },
+    error: {
+      main: '#f44336',
+    },
+  },
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
+    <Provider store={Store}>
+      <StyledEngineProvider injectFirst>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <App />
+        </ThemeProvider>
+      </StyledEngineProvider>
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
