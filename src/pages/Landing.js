@@ -10,7 +10,7 @@ export default function Landing() {
   return (
       <Grid container>
           <Grid item xs={12}>
-              <Typography>Landing Page</Typography>
+              <Typography>Welcome to Vycelium</Typography>
           </Grid>
       </Grid>
     )

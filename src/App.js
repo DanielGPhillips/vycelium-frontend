@@ -9,8 +9,9 @@ import Routing from './utils/Routing';
 
 function App() {
   return (
-    <Router>
-      <Routing />            
+    <Router>      
+      <Routing />
+      <Navatar />            
     </Router>
   );
 }
